@@ -1,7 +1,6 @@
-FROM mhart/alpine-node:5.7.1
-MAINTAINER Ecor Ventures
+FROM alpine:3.3
+MAINTAINER Corey Butler
 
-ENV AWS_REGION us-west-1
 ENV PATH /letsencrypt/venv/bin:$PATH
 
 WORKDIR /letsencrypt
@@ -38,5 +37,4 @@ EXPOSE 80 443
 VOLUME /etc/letsencrypt/
 
 
-ENTRYPOINT ["/launch.sh"]
-CMD ["--help"]
+ENTRYPOINT ["letsencrypt"]
