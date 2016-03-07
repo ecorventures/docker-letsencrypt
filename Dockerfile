@@ -29,10 +29,6 @@ RUN export BUILD_DEPS="git \
 	&& apk del ${BUILD_DEPS} \
     && rm -rf /var/cache/apk/*
 
-ADD ./launch.sh /launch.sh
-ADD ./app /app
-RUN cd /app && npm install && chmod +x /launch.sh
-
 EXPOSE 80 443
 VOLUME /etc/letsencrypt/
 
